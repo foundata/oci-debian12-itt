@@ -18,7 +18,8 @@ ARG DEBIAN_FRONTEND=noninteractive
 # Packages are included for these purposes:
 #
 # - Overall compatibility and network functionality:
-#   build-essential gnu-which iproute2 libffi-dev libssl-dev procps systemd
+#   build-essential ca-certificates gnu-which iproute2 libffi-dev libssl-dev
+#   procps systemd
 #
 # - Easier debugging within the container (good feature-to-size ratio):
 #   iputils-ping, iputils-tracepath, less, vim-tiny
@@ -27,6 +28,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 #   python3, python3-apt, sudo
 RUN apt-get update && apt-get install -y --no-install-recommends \
         build-essential \
+        ca-certificates \
         gnu-which \
         iproute2 \
         libffi-dev \
